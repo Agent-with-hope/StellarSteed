@@ -1,0 +1,124 @@
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background-color: #0f0514; /* 极深紫，营造暗夜感 */
+    color: #f8fafc;
+    overflow-x: hidden;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, .festive-font {
+    font-family: 'ZCOOL KuaiLe', cursive;
+}
+
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    background: linear-gradient(180deg, #1f0933 0%, #0a0210 100%);
+}
+
+/* 霓虹玻璃面板 */
+.glass-panel {
+    background: rgba(30, 8, 38, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 100, 200, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(220, 38, 38, 0.4);
+}
+
+.glass-card {
+    background: rgba(45, 10, 50, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    background: rgba(60, 15, 65, 0.6);
+    border-color: rgba(251, 191, 36, 0.8);
+    box-shadow: 0 15px 40px -5px rgba(251, 191, 36, 0.5);
+}
+
+/* 渐变高光按钮 */
+.active-tab {
+    background: linear-gradient(135deg, #ff0f7b 0%, #f89b29 100%);
+    color: white;
+    border: 1px solid #fef08a;
+    box-shadow: 0 4px 20px rgba(255, 15, 123, 0.6);
+}
+
+.inactive-tab {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fde047;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+.inactive-tab:hover {
+    background: rgba(255, 215, 0, 0.15);
+    color: #fff;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+/* AI 聊天窗口 */
+.chat-window {
+    width: 380px;
+    height: 550px;
+    border-radius: 24px;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    background: rgba(20, 5, 25, 0.95);
+    border: 1px solid rgba(251, 191, 36, 0.4);
+    box-shadow: 0 0 50px rgba(255, 15, 123, 0.5);
+}
+
+.chat-window.open { display: flex; animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px) scale(0.9); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.ai-message { background: rgba(251, 191, 36, 0.15); color: #fef08a; border: 1px solid rgba(251, 191, 36, 0.3); }
+.user-message { background: linear-gradient(135deg, #ff0f7b 0%, #f89b29 100%); color: white; font-weight: bold; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(251, 191, 36, 0.5); border-radius: 10px; }
+
+.animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* 特效文本渐变 */
+.text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(90deg, #f89b29, #ff0f7b);
+}
+
+/* 春联样式 */
+.couplet-paper {
+    background: linear-gradient(180deg, #b91c1c 0%, #991b1b 100%);
+    border: 2px solid #fcd34d;
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.6);
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    letter-spacing: 0.5em;
+}
+.couplet-batch {
+    background: linear-gradient(90deg, #b91c1c 0%, #991b1b 100%);
+    border: 2px solid #fcd34d;
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.6);
+    letter-spacing: 0.2em;
+}
