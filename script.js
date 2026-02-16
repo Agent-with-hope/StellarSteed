@@ -82,7 +82,7 @@ const initThreeJS = () => {
         const scale = Math.random() * 0.6 + 0.6;
         lanternObj.scale.set(scale, scale, scale);
         
-        lanternObj。userData = {
+        lanternObj.userData = {
             speedY: Math.random() * 0.04 + 0.02, 
             swayFreqX: Math.random() * 0.01 + 0.005, 
             swayFreqZ: Math.random() * 0.01 + 0.005, 
@@ -153,9 +153,9 @@ const wishesData = {
         title: '💼 事业起飞 (禁止画饼)', 
         intro: '未来的互联网巨头/行业大佬，你的福气在后头！', 
         points: [
-            { title: '左手干翻KPI', text: '愿您在 2026 的商海赛道中，既有洞察先机的敏锐，亦有步步为营的底气；每一份战略部署皆能落地生根，于繁花锦簇处见真章。' }, 
-            { title: '拒绝精神内耗', text: '拒虚妄之言，成实干之名。愿您的事业如灵驹巡天，纵横捭阖而不失本心；在每一个决策瞬间，皆能举重若轻，领航团队在星辰大海中破浪前行。' }, 
-            { title: '升职加薪大步走', text: '无须画饼，自有乾坤。愿您这一年的辛劳皆有回响，所有的耕耘皆化为实实在在的硕果；愿您的企业如骏马疾驰，不仅跑出加速度，更跑出新高度。' }
+            { title: '左手干翻KPI', text: '祝你新的一年灵感如泉涌，PPT一稿过，代码无Bug，方案让老板看了直呼内行。' }, 
+            { title: '拒绝精神内耗', text: '遇到傻X客户或同事，心里默念“吗喽的命也是命”，绝不内耗自己！该下班下班，不当牛马。' }, 
+            { title: '升职加薪大步走', text: '别人卷生卷死，你躺赢带薪。搞钱才是硬道理，智者不入爱河，寡王一路硕博/暴富！' }
         ], 
         activity: '<strong>来自基友的嘱托：</strong> 苟富贵，勿相忘。发达了记得立刻把公司的保洁大位留给我！' 
     },
@@ -183,7 +183,7 @@ const wishesData = {
 
 const moments = [
     { id: 1, title: '半夜 12 点在微信群互发“我要早睡减肥”后的我们在干嘛？', do: '实际行动：五分钟后互相疯狂转发深夜放毒的美食视频，并愉快地拼了一单炸鸡。', dont: '试图阻拦对方，结果双双饿着肚子失眠到天亮。' },
-    { id: 2, title: '当其中一人遇到极品奇葩/傻X，开始疯狂吐槽时...', do: '表面稳如老狗，私窗里化身没有感情的输出机器，我就是你的金牌嘴替，毫无底线地站在你这边！', dont: '用理智分析对错。我们不需要理智，我们需要情绪价值。' },
+    { id: 2, title: '当其中一人遇到极品奇葩/傻X，开始疯狂吐槽时...', do: '表面稳如老狗，私窗里化身没有感情的输出机器，我就是你的金牌 AI 嘴替，毫无底线地站在你这边！', dont: '用理智分析对错。我们不需要理智，我们需要情绪价值。' },
     { id: 3, title: '关于我们常常挂在嘴边的退休养老/暴富计划', do: '买个大别墅养两只狗三只猫，坐在摇椅上依然在八卦当年谁暗恋过谁。主打一个又穷又开心。', dont: '担心未来。有你在，再穷的退休生活也能过成欢乐喜剧人。' }
 ];
 
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // 这些函数需要暴露给全局
-window。scrollToSection = function(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); };
+window.scrollToSection = function(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); };
 window.toggleMobileMenu = function() { document.getElementById('mobile-menu').classList.toggle('hidden'); };
 
 // --- 渲染函数 ---
@@ -215,7 +215,7 @@ window.renderWishContent = function(group) {
             <div class="mb-6 p-6 rounded-2xl bg-white/5 border border-pink-500/20 hover:border-orange-500/50 hover:bg-orange-900/20 transition">
                 <h4 class="text-xl font-bold text-yellow-300 mb-2">${p.title}</h4>
                 <p class="text-purple-100 leading-relaxed">${p.text}</p>
-            </div>`)。join('');
+            </div>`).join('');
         area.innerHTML = `
             <div class="flex flex-col lg:flex-row gap-12">
                 <div class="lg:w-1/3">
@@ -240,14 +240,14 @@ window.renderMoments = function() {
                 <h3 class="font-bold text-xl text-yellow-100 leading-snug w-[85%]">${m.title}</h3>
                 <span id="icon-${m.id}" class="text-4xl font-light text-pink-500 ml-6">👀</span>
             </div>
-            <div id="moment-${m。id}" class="hidden p-8 bg-black/50 border-t border-pink-500/20 animate-fade-in">
+            <div id="moment-${m.id}" class="hidden p-8 bg-black/50 border-t border-pink-500/20 animate-fade-in">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <div class="p-5 bg-orange-900/30 border border-orange-500/40 rounded-2xl text-orange-100 leading-relaxed"><strong>真实的我们：</strong> ${m。do}</div>
+                    <div class="p-5 bg-orange-900/30 border border-orange-500/40 rounded-2xl text-orange-100 leading-relaxed"><strong>真实的我们：</strong> ${m.do}</div>
                     <div class="p-5 bg-pink-900/30 border border-pink-500/40 rounded-2xl text-pink-200 leading-relaxed"><strong>不存在的理智：</strong> ${m.dont}</div>
                 </div>
                 <div class="pt-6 border-t border-yellow-500/20">
-                    <h4 class="text-sm font-black text-yellow-400 uppercase tracking-widest mb-4">🤖 赛博判官（默契度测试）</h4>
-                    <p class="text-sm text-purple-200 mb-4">这种情况下，你平时会对我发什么离谱表情包或吐槽？输入你的神回复，让判官评判我们的塑料情谊有多深！</p>
+                    <h4 class="text-sm font-black text-yellow-400 uppercase tracking-widest mb-4">🤖 AI 赛博判官（默契度测试）</h4>
+                    <p class="text-sm text-purple-200 mb-4">这种情况下，你平时会对我发什么离谱表情包或吐槽？输入你的神回复，让 AI 评判我们的塑料情谊有多深！</p>
                     <div class="flex gap-4">
                         <input type="text" id="moment-input-${m.id}" placeholder="输入你的狂野发言..." class="flex-1 px-6 py-4 rounded-xl bg-black/60 border border-pink-500/30 text-white font-bold focus:ring-2 focus:ring-orange-500 outline-none">
                         <button onclick="analyzeMoment(${m.id}, '${m.title}')" class="bg-gradient-to-r from-pink-600 to-orange-500 text-white px-8 py-4 rounded-xl hover:shadow-[0_0_15px_rgba(255,15,123,0.6)] font-black transition">测一测</button>
@@ -267,13 +267,13 @@ window.toggleMoment = function(id) {
 // --- Chart.js ---
 function initCharts() {
     Chart.defaults.color = '#fde047'; 
-    Chart。defaults。font.family = "'Noto Sans SC', sans-serif";
+    Chart.defaults.font.family = "'Noto Sans SC', sans-serif";
     Chart.defaults.font.weight = 'bold';
 
     const happyCtx = document.getElementById('happinessChart');
     if(happyCtx) {
         new Chart(happyCtx, {
-            输入: 'doughnut', 
+            type: 'doughnut', 
             data: { 
                 labels: ['疯狂搞钱的白日梦', '随时随地大小癫', '互相提供情绪价值', '深夜深夜emo互助', '间歇性踌躇满志(极少)'], 
                 datasets: [{ 
@@ -328,7 +328,7 @@ async function callGemini(prompt, sys="") {
     }
 }
 
-window。toggleChat = function() { 
+window.toggleChat = function() { 
     const w = document.getElementById('chat-window'); 
     if(!w) return;
     w.style.display = w.style.display === 'flex' ? 'none' : 'flex'; 
